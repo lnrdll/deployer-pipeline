@@ -1,8 +1,22 @@
-FROM php:7.3-cli-stretch
+FROM debian:stable-slim
 
 ## Install dependencies
 RUN apt-get update -y
-RUN apt-get install -y git zip php7.3-zip
+RUN apt-get install -y php-xdebug \
+                       php-fpm \
+                       php-mysql \
+                       php7.3-cli \
+                       php7.3-curl \
+                       php7.3-mbstring \
+                       php7.3-xml \
+                       php7.3-zip \
+                       php7.3-intl \
+                       php7.3-bcmath \
+                       php7.3-ctype \
+                       php7.3-json \
+                       curl git unzip \
+                       php-cli \
+                       libnss3-tools
 
 ## Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
