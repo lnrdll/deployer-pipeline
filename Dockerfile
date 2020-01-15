@@ -5,6 +5,7 @@ RUN apk --update add curl \
                      git \
                      unzip \
                      openssl \
+                     openssh-client \
                      rsync \
                      php7 \
                      php7-xdebug \
