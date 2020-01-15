@@ -24,7 +24,8 @@ RUN apk --update add curl \
                      php7-dom \
                      php7-fileinfo \
                      php7-tokenizer \
-                     php7-pcntl
+                     php7-pcntl \
+                     php7-posix
 
 ## Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
