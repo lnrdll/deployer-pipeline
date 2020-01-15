@@ -1,21 +1,26 @@
 FROM alpine:latest
 
 ## Install dependencies
-RUN apk update
-RUN apk add php7 \
-            php7-xdebug \
-            php7-fpm \
-            php7-cli \
-            php7-curl \
-            php7-mbstring \
-            php7-xml \
-            php7-zip \
-            php7-intl \
-            php7-bcmath \
-            php7-ctype \
-            php7-json \
-            php7-cli \
-            curl git unzip openssl rsync
+RUN apk --update add curl \
+                     git \
+                     unzip \
+                     openssl \
+                     rsync \
+                     php7 \
+                     php7-xdebug \
+                     php7-fpm \
+                     php7-cli \
+                     php7-curl \
+                     php7-mbstring \
+                     php7-xml \
+                     php7-zip \
+                     php7-intl \
+                     php7-bcmath \
+                     php7-phar \
+                     php7-ctype \
+                     php7-json \
+                     php7-cli \
+                     php7-openssl
 
 ## Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
