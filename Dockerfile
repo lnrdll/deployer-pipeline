@@ -2,7 +2,7 @@ FROM php:7.3-cli-stretch
 
 ## Install dependencies
 RUN apt-get update -y
-RUN apt-get install -y git zip
+RUN apt-get install -y git zip php7.3-zip
 
 ## Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
