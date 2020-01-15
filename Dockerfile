@@ -20,7 +20,11 @@ RUN apk --update add curl \
                      php7-ctype \
                      php7-json \
                      php7-cli \
-                     php7-openssl
+                     php7-openssl \
+                     php7-dom \
+                     php7-fileinfo \
+                     php7-tokenizer \
+                     php7-pcntl
 
 ## Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
