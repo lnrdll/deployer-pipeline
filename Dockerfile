@@ -1,7 +1,7 @@
 FROM php:7.3-cli-alpine
 
 ## Install SSH and Rsync
-RUN apk add --no-cache openssh rsync php7-pcntl libzip-dev && docker-php-ext-configure zip --with-libzip=/usr/include && docker-php-ext-install zip
+RUN apk add --no-cache openssh rsync php7-pcntl libzip-dev
 
 ## Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
