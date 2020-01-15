@@ -1,22 +1,21 @@
-FROM debian:stable-slim
+FROM alpine:latest
 
 ## Install dependencies
-RUN apt-get update -y
-RUN apt-get install -y php-xdebug \
-                       php-fpm \
-                       php-mysql \
-                       php7.3-cli \
-                       php7.3-curl \
-                       php7.3-mbstring \
-                       php7.3-xml \
-                       php7.3-zip \
-                       php7.3-intl \
-                       php7.3-bcmath \
-                       php7.3-ctype \
-                       php7.3-json \
-                       curl git unzip \
-                       php-cli \
-                       libnss3-tools
+RUN apk update
+RUN apk add php7 \
+            php7-xdebug \
+            php7-fpm \
+            php7-cli \
+            php7-curl \
+            php7-mbstring \
+            php7-xml \
+            php7-zip \
+            php7-intl \
+            php7-bcmath \
+            php7-ctype \
+            php7-json \
+            php7-cli \
+            curl git unzip openssl rsync
 
 ## Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
